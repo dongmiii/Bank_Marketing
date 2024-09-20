@@ -131,12 +131,15 @@ F1 스코어를 최적화하여 모델 성능을 향상시킴
 
 ## 트러블슈팅 : 시각화 문제 해결
 1. PyCaret의 ClassificationExperiment 객체를 사용하여 설정할 때 시각화에 문제가 발생<br><br>
-  ① setup() 호출 후 환경 확인
-  setup() 메서드가 정상적으로 완료된 후, PyCaret 환경이 올바르게 설정되었는지 확인해야 함. 이를 확인한 후에 plot_model()을 호출.
-  
-    ② 모델 시각화
-    setup() 메서드가 정상적으로 완료되면, 선택된 최적의 모델에 대해 피처 중요도를 시각화할 수 있음.
+
+파이캐럿에서 setup() 함수를 사용할 때,  s.setup()이 적절한 컨텍스트를 제공하지 않아서 시각화가 이루어지지 않음. <br>
+제대로 작동하려면 필요한 정보나 상태가 미리 설정되어 있어야하는데 이 설정이 특정 객체에 바인딩되지 않으면 시각화가 제대로 작동하지 않을 수 있음.
+따라서, setup을 exp 변수에 할당해주었음
+
     ```
+    s = ClassificationExperiment()
+    s.setup(df_bank, target = 'deposit', session_id = 123)
+    
     # PyCaret 환경 설정 후 피처 중요도 시각화
     exp = s.setup(df_bank,
                   target='deposit',
@@ -146,6 +149,8 @@ F1 스코어를 최적화하여 모델 성능을 향상시킴
 
 2. Optuna를 안 만들고 옵션 안에 넣어 시각화 불가능 -> Optuna를 옵션 안에 넣지 않고 따로 설정해주었음.
     ```
+    best_model = s.tune_model(best, optimize='F1', search_library='optuna')
+    
     # Objective function for Optuna
     def objective(trial):
         param = {
