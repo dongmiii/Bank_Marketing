@@ -12,6 +12,8 @@ pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금
 7. 결과<br>
 8. 트러블 슈팅 및 추가할 점<br>
 
+<br>
+
 ##  팀원소개
 |    소속    |   이름  |
 | :--------: |  :----: |
@@ -19,6 +21,13 @@ pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금
 | 우리_fis 아카데미 3기 | 서정윤 |
 | 우리_fis 아카데미 3기 | 이훈표 |
 | 우리_fis 아카데미 3기 | 함동미 |
+
+<br>
+
+## 데이터셋 출처
+https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset?select=bank.csv
+
+<br>
 
 ## 기술 스택
 
@@ -29,6 +38,8 @@ pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금
   ✓ Scikit-learn<br>
   ✓ PyCaret<br>
   ✓ Optuna
+
+<br>
 
 ## 설치
 ```
