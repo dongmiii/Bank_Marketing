@@ -78,10 +78,9 @@ from pycaret.classification import compare_models
 best_model = s.compare_models()  # 모델 비교 후 가장 좋은 모델 선택
 ```
 
-![bestmodel](https://github.com/user-attachments/assets/ed306cd3-e7e1-431d-90a3-da2e5c39d385)
+![1](https://github.com/user-attachments/assets/a62ef8a4-a4d1-4db7-b9a9-71e9824f236c)
 
-![printbestmodel](https://github.com/user-attachments/assets/ce1087aa-5b95-4ca9-aacf-ac43192868d6)
-
+![2](https://github.com/user-attachments/assets/050ffd9d-fa6e-4d47-9da5-ec08959b4b6c)
 
 ## 🎫 모델 튜닝
 최적의 모델을 선택한 후, optuna 라이브러리를 활용하여 모델 튜닝
@@ -132,11 +131,12 @@ print(study.best_params)
 모델을 비교하고 튜닝하여 최적의 모델을 도출함.<br>
 F1 스코어를 최적화하여 모델 성능을 향상시킴
 
-![최종결과](https://github.com/user-attachments/assets/787ad9a5-773b-425c-9cc2-e466d82ea448)
+![3](https://github.com/user-attachments/assets/5358ddd8-a245-4cf7-8c95-7ad409aafe21)
 
-![최종결과2](https://github.com/user-attachments/assets/6a75bd43-fc9f-43aa-b4cb-29b7c469dda2)
+![4](https://github.com/user-attachments/assets/6ed385d0-9bb6-494d-af82-af61bd08f7a9)
 
-![최종결과3](https://github.com/user-attachments/assets/c1408d6e-a449-4f8d-896a-cdde22391442)
+![5](https://github.com/user-attachments/assets/d8dc2566-58bc-48db-abba-b9e9c20bcec2)
+
 
 ---
 
