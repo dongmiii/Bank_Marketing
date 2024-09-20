@@ -195,7 +195,7 @@ F1 스코어를 최적화하여 모델 성능을 향상시킴
 
     <후>
     df_bank = df_bank.drop('duration', axis=1)
-    ```
+      ```
       
 ---
 
