@@ -41,8 +41,14 @@ df_bank = pd.read_csv('bank.csv')
 ```
 from pycaret.classification import ClassificationExperiment
 
+# PyCaret 설정: 전진 선택법과 함께 피처 선택
 s = ClassificationExperiment()
-s.setup(df_bank, target='deposit', session_id=123)
+
+# setup의 결과를 'exp' 변수에 저장
+exp = s.setup(df_bank,
+              target='deposit',
+              session_id=123,
+              feature_selection=False)  # 전진 선택법 비활성화
 ```
 
 ⑵ 모델 비교<br>
@@ -50,18 +56,55 @@ PyCaret의 compare_models 기능을 통해 여러 모델을 비교하여 최적�
 ```
 from pycaret.classification import compare_models
 
-best = s.compare_models()
-print(best)
-```
-![image (1)](https://github.com/user-attachments/assets/161c94d2-dfbf-41a8-aada-ce9016ee2ce3)
+best_model = s.compare_models()  # 모델 비교 후 가장 좋은 모델 선택
 
-![image (2)](https://github.com/user-attachments/assets/9ba6106d-48cb-4aed-b253-d66ddd6eedf9)
+```
+
+
 
 ## 모델 튜닝
 최적의 모델을 선택한 후, optuna 라이브러리를 활용하여 모델 튜닝
 ```
-best_model = s.tune_model(best, optimize='F1', search_library='optuna')
-print(best_model)
+import pandas as pd
+import optuna
+import lightgbm as lgb
+from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+
+# 원본 데이터프레임에서 'deposit' 컬럼 분리
+X = df_bank.drop('deposit', axis=1)
+y = df_bank['deposit']
+
+# 범주형 변수 인코딩
+X_encoded = pd.get_dummies(X, drop_first=True)  # one-hot 인코딩
+
+# 데이터 분할
+X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.3, random_state=123)
+
+# Objective function for Optuna
+def objective(trial):
+    param = {
+        'objective': 'binary', # 목표 함수 설정: 이진 분류 문제
+        'metric': 'binary_error',  # 평가 지표: 이진 오류
+        'num_leaves': trial.suggest_int('num_leaves', 2, 256),
+        'learning_rate': trial.suggest_loguniform('learning_rate', 1e-3, 1.0),
+        'n_estimators': trial.suggest_int('n_estimators', 10, 1000),
+        'max_depth': trial.suggest_int('max_depth', 3, 12),
+    }
+
+    model = lgb.LGBMClassifier(**param) # 모델초기화
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    accuracy = accuracy_score(y_test, preds)
+
+    return accuracy
+
+# Optuna optimization
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=50)
+
+# Best parameters
+print(study.best_params)
 ```
 
 ## 결과
@@ -81,7 +124,10 @@ PyCaret의 ClassificationExperiment 객체를 사용하여 설정할 때 시각�
   setup() 메서드가 정상적으로 완료되면, 선택된 최적의 모델에 대해 피처 중요도를 시각화할 수 있음.
 ```
 # PyCaret 환경 설정 후 피처 중요도 시각화
-s.setup(df_bank, target='deposit', session_id=123)
+exp = s.setup(df_bank,
+              target='deposit',
+              session_id=123,
+              feature_selection=False) 
 
 # 모델 시각화
 best_model = s.compare_models()
