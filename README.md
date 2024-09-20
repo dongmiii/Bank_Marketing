@@ -131,7 +131,7 @@ print(study.best_params)
 모델을 비교하고 튜닝하여 최적의 모델을 도출함.<br>
 F1 스코어를 최적화하여 모델 성능을 향상시킴
 
-![3](https://github.com/user-attachments/assets/5358ddd8-a245-4cf7-8c95-7ad409aafe21)
+![캡처](https://github.com/user-attachments/assets/d2f5dfc6-2228-46ae-b208-73b8d2fb26dd)
 
 ![4](https://github.com/user-attachments/assets/6ed385d0-9bb6-494d-af82-af61bd08f7a9)
 
