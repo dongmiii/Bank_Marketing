@@ -59,7 +59,9 @@ from pycaret.classification import compare_models
 best_model = s.compare_models()  # 모델 비교 후 가장 좋은 모델 선택
 
 ```
+![bestmodel](https://github.com/user-attachments/assets/ed306cd3-e7e1-431d-90a3-da2e5c39d385)
 
+![printbestmodel](https://github.com/user-attachments/assets/ce1087aa-5b95-4ca9-aacf-ac43192868d6)
 
 
 ## 모델 튜닝
@@ -111,7 +113,7 @@ print(study.best_params)
 모델을 비교하고 튜닝하여 최적의 모델을 도출함.<br>
 F1 스코어를 최적화하여 모델 성능을 향상시킴
 
-![image](https://github.com/user-attachments/assets/b3a5c839-96e1-4b0d-8c03-6674d7c9cf29)
+![최종결과](https://github.com/user-attachments/assets/12d19868-60d3-4d09-ac6f-89b3b5efed20)
 
 ---
 
