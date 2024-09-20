@@ -113,7 +113,9 @@ print(study.best_params)
 모델을 비교하고 튜닝하여 최적의 모델을 도출함.<br>
 F1 스코어를 최적화하여 모델 성능을 향상시킴
 
-![최종결과](https://github.com/user-attachments/assets/12d19868-60d3-4d09-ac6f-89b3b5efed20)
+
+
+![최종결과2](https://github.com/user-attachments/assets/6a75bd43-fc9f-43aa-b4cb-29b7c469dda2)
 
 ---
 
@@ -130,8 +132,4 @@ exp = s.setup(df_bank,
               target='deposit',
               session_id=123,
               feature_selection=False) 
-
-# 모델 시각화
-best_model = s.compare_models()
-s.plot_model(best_model, plot='feature')
 ```
