@@ -1,5 +1,5 @@
 # 💸은행 데이터 모델링 프로젝트💰
-pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 최적의 머신러닝 모델을 찾습니다. <br>
+pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금 여부를 분류 및 예측하는 최적의 머신러닝 모델을 찾습니다. <br>
 이 과정에서 데이터 전처리, 모델 비교, 그리고 모델 튜닝을 포함한 전반적인 분석을 수행합니다.
 
 ## 목차
@@ -65,8 +65,8 @@ PyCaret의 compare_models 기능을 통해 여러 모델을 비교하여 최적�
 from pycaret.classification import compare_models
 
 best_model = s.compare_models()  # 모델 비교 후 가장 좋은 모델 선택
-
 ```
+
 ![bestmodel](https://github.com/user-attachments/assets/ed306cd3-e7e1-431d-90a3-da2e5c39d385)
 
 ![printbestmodel](https://github.com/user-attachments/assets/ce1087aa-5b95-4ca9-aacf-ac43192868d6)
