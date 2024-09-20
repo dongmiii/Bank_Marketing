@@ -21,13 +21,14 @@ pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 최적
 | 우리_fis 아카데미 3기 | 함동미 |
 
 ## 기술 스택
-  ✔ Python<br>
-  ✔ Pandas<br>
-  ✔ Seaborn<br>
-  ✔ Matplotlib<br>
-  ✔ Scikit-learn<br>
-  ✔ PyCaret<br>
-  ✔ Optuna
+
+  ✓ Python<br>
+  ✓ Pandas<br>
+  ✓ Seaborn<br>
+  ✓ Matplotlib<br>
+  ✓ Scikit-learn<br>
+  ✓ PyCaret<br>
+  ✓ Optuna
 
 ## 설치
 ```
