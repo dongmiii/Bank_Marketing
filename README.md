@@ -2,7 +2,7 @@
 pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금 여부를 분류 및 예측하는 최적의 머신러닝 모델을 찾습니다. <br>
 이 과정에서 데이터 전처리, 모델 비교, 그리고 모델 튜닝을 포함한 전반적인 분석을 수행합니다.
 
-## 목차
+## 🚌 목차
 1. 프로젝트 소개<br>
 2. 기술 스택<br>
 3. 설치<br>
@@ -14,7 +14,7 @@ pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금
 
 <br>
 
-##  팀원소개
+##  🖐 팀원소개
 |    소속    |   과정   |   이름  |
 | :--------: |  :----: |   :----: |
 | 우리_fis 아카데미 3기 | AI 엔지니어링 | 배희진 |
@@ -24,12 +24,12 @@ pycaret 라이브러리를 활용하여 은행 데이터를 분석하고, 예금
 
 <br>
 
-## 데이터셋 출처
+## 🎀 데이터셋 출처
 https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset?select=bank.csv
 
 <br>
 
-## 기술 스택
+## 🎪 기술 스택
 
   ✓ Python<br>
   ✓ Pandas<br>
@@ -41,7 +41,7 @@ https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset?select=bank
 
 <br>
 
-## 설치
+## 🎢 설치
 ```
 !pip install pycaret
 !pip install seaborn scikit-learn
@@ -49,13 +49,13 @@ https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset?select=bank
 !pip install pycaret[tuners]
 ```
 
-## 데이터셋
+## 🛒 데이터셋
 ```
 # 데이터 로드
 df_bank = pd.read_csv('bank.csv')
 ```
 
-## 모델링 과정
+## 🎠 모델링 과정
 ⑴ PyCaret 설정
 ```
 from pycaret.classification import ClassificationExperiment
@@ -83,7 +83,7 @@ best_model = s.compare_models()  # 모델 비교 후 가장 좋은 모델 선택
 ![printbestmodel](https://github.com/user-attachments/assets/ce1087aa-5b95-4ca9-aacf-ac43192868d6)
 
 
-## 모델 튜닝
+## 🎫 모델 튜닝
 최적의 모델을 선택한 후, optuna 라이브러리를 활용하여 모델 튜닝
 ```
 import pandas as pd
@@ -128,7 +128,7 @@ study.optimize(objective, n_trials=50)
 print(study.best_params)
 ```
 
-## 결과
+## 🎉 결과
 모델을 비교하고 튜닝하여 최적의 모델을 도출함.<br>
 F1 스코어를 최적화하여 모델 성능을 향상시킴
 
@@ -140,7 +140,7 @@ F1 스코어를 최적화하여 모델 성능을 향상시킴
 
 ---
 
-## 트러블슈팅 : 시각화 문제 해결
+## 🎇 트러블슈팅 : 시각화 문제 해결
 1. PyCaret의 ClassificationExperiment 객체를 사용하여 설정할 때 시각화에 문제가 발생<br>
     파이캐럿에서 setup() 함수를 사용할 때,  s.setup()이 적절한 컨텍스트를 제공하지 않아서 시각화가 이루어지지 않음. <br>
     제대로 작동하려면 필요한 정보나 상태가 미리 설정되어 있어야하는데 이 설정이 특정 객체에 바인딩되지 않으면 시각화가 제대로 작동하지않음.
@@ -188,12 +188,12 @@ F1 스코어를 최적화하여 모델 성능을 향상시킴
 
 ---
 
-## 추가할 점 
+## 🎁 추가할 점 
 ① 파라미터에 따른 결과를 비교해 볼 수 있도록 Streamlit으로 배포까지 진행하고싶다. <br>
 ② duration은 사후에 기록된 컬럼이기 때문에, 앞으로의 예측에서는 수집할 수 없는 데이터이므로 drop해줘야함.
 
 ---
 
-## 피드백
+## 👀 피드백
 Optuna Dashboard를 사용해보자!
 
