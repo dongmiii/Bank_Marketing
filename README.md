@@ -190,11 +190,7 @@ F1 스코어를 최적화하여 모델 성능을 향상시킴
      해당 피처를 제거해주지 않아 정확한 결과 도출이 어려움 -> 제거 후 분석 진행
 
       ```
-    <전>
-  
-
-    <후>
-    df_bank = df_bank.drop('duration', axis=1)
+      df_bank = df_bank.drop('duration', axis=1)
       ```
       
 ---
