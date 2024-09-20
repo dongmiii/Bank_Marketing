@@ -36,7 +36,7 @@ https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset?select=bank
   ✓ Seaborn<br>
   ✓ Matplotlib<br>
   ✓ Scikit-learn<br>
-  ✓ PyCaret<br>
+  ✓ AutoML(PyCaret)<br>
   ✓ Optuna
 
 <br>
